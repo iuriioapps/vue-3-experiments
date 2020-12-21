@@ -1,31 +1,29 @@
 <template>
     <aside class="app-sidenav">
-        <ul>
-            <li v-for="(item, index) in items"
-                :key="index">
-                <router-link :to="item.to">
-                    {{ item.title }}
-                </router-link>
-            </li>
+        <ul id="sidenav">
+            <template v-for="(route, index) in routes">
+                <li
+                    v-if="route.name"
+                    :key="index">
+                    <router-link :to="route.path">
+                        {{ route.name }}
+                    </router-link>
+                </li>
+            </template>
         </ul>
     </aside>
 </template>
 
 <script lang="ts">
     import { defineComponent } from 'vue';
+    import router from '@/router';
 
     export default defineComponent({
         name: 'AppSidenav',
 
         data() {
             return {
-                items: [{
-                    title: 'Home',
-                    to: '/'
-                }, {
-                    title: 'About',
-                    to: '/about'
-                }]
+                routes: router.getRoutes()
             };
         }
     })

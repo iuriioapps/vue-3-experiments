@@ -8,6 +8,7 @@ html {
 }
 
 body {
+    position: relative;
     height: 100vh;
     font-size: 1.4rem;
 }
@@ -18,4 +19,46 @@ ul {
 
 a {
     text-decoration: none;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 10rem;
+    min-height: 3rem;
+    border-radius: 1000px;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    color: white;
+    background-color: darkslategray;
+    outline: none;
+
+    &:focus-visible {
+        background-color: darken(darkslategray, 10%);
+    }
+}
+
+.modal-position {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modals {
+    @extend .modal-position;
+}
+
+.fade {
+    &-enter-active,
+    &-leave-active {
+        transition: opacity .5s
+    }
+
+    &-enter,
+    &-leave-to {
+        opacity: 0
+    }
 }

@@ -2,7 +2,9 @@
     <div class="app">
         <app-header />
         <app-sidenav />
-        <router-view class="app-content" />
+        <div class="app-content">
+            <router-view />
+        </div>
     </div>
 </template>
 
@@ -24,7 +26,7 @@
 
 <style lang="scss">
     .app {
-        height: 100vh;
+        height: calc(100vh - 6rem);
         display: grid;
         grid-template-columns: max-content 1fr;
         grid-template-rows: max-content 100%;
