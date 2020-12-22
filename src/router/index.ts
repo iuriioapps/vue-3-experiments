@@ -1,6 +1,12 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 
-import { Home, Teleport, About, PageNotFound } from '../views';
+import {
+    Home,
+    Teleport,
+    Fragments,
+    About,
+    PageNotFound
+} from '../views';
 
 const routes: Array<RouteRecordRaw> = [{
     path: '/',
@@ -10,6 +16,10 @@ const routes: Array<RouteRecordRaw> = [{
     path: '/teleport',
     name: 'Teleport',
     component: Teleport
+}, {
+    path: '/fragments',
+    name: 'Fragments',
+    component: Fragments
 }, {
     path: '/about',
     name: 'About',
