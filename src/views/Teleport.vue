@@ -10,13 +10,13 @@
     </teleport>
 
     <app-modal v-model:open="modalOpen">
-        <template v-slot:header>
+        <template #header>
             This is header
         </template>
         <div>
             This is modal content
         </div>
-        <template v-slot:footer>
+        <template #footer>
             <button @click="modalOpen = false">
                 Cancel
             </button>

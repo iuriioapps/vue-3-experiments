@@ -13,14 +13,14 @@ body {
     font-size: 1.4rem;
 }
 
-.h-base {
+@mixin h-base {
     color: #292626;
     margin: 1rem 0;
 }
 
 @for $i from 1 through 6 {
     h#{$i} {
-        @extend .h-base;
+        @include h-base;
     }
 }
 

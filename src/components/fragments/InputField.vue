@@ -34,6 +34,7 @@
         height: 3rem;
         border: solid 1px grey;
         border-radius: 4px;
+        padding: 4px;
 
         & + label {
             display: block;

@@ -3,13 +3,21 @@
         <app-header />
         <app-sidenav />
         <div class="app-content">
-            <router-view />
+            <Suspense>
+                <template #default>
+                    <router-view />
+                </template>
+                <template #fallback>
+                    <stretch />
+                </template>
+            </Suspense>
         </div>
     </div>
 </template>
 
 <script type="ts">
     import { defineComponent } from 'vue';
+    import { Stretch } from 'vue-loading-spinner';
 
     import AppHeader from '@/components/navigation/AppHeader.vue';
     import AppSidenav from '@/components/navigation/AppSidenav.vue';
@@ -19,7 +27,8 @@
 
         components: {
             AppHeader,
-            AppSidenav
+            AppSidenav,
+            Stretch
         }
     });
 </script>

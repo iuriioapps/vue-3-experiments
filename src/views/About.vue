@@ -8,6 +8,8 @@
     import { defineComponent } from 'vue';
 
     export default defineComponent({
-        name: 'About'
+        async setup() {
+            await new Promise(resolve => setTimeout(resolve, 5000));
+        }
     });
 </script>

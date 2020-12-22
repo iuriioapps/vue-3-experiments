@@ -4,7 +4,7 @@ import {
     Home,
     Teleport,
     Fragments,
-    About,
+    Suspense,
     PageNotFound
 } from '../views';
 
@@ -20,10 +20,14 @@ const routes: Array<RouteRecordRaw> = [{
     path: '/fragments',
     name: 'Fragments',
     component: Fragments
+},{
+    path: '/suspense',
+    name: 'Suspense',
+    component: Suspense
 }, {
     path: '/about',
     name: 'About',
-    component: About
+    component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
 }, {
     path: '/:pathMatch(.*)*',
     component: PageNotFound
