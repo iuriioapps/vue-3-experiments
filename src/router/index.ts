@@ -5,6 +5,7 @@ import {
     Teleport,
     Fragments,
     Suspense,
+    Experimental,
     PageNotFound
 } from '../views';
 
@@ -24,6 +25,10 @@ const routes: Array<RouteRecordRaw> = [{
     path: '/suspense',
     name: 'Suspense',
     component: Suspense
+},{
+    path: '/experimental',
+    name: 'Experimental',
+    component: Experimental
 }, {
     path: '/about',
     name: 'About',
